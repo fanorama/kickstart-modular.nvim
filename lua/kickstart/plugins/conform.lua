@@ -31,6 +31,11 @@ return {
           lsp_format = lsp_format_opt,
         }
       end,
+      formatters = {
+        stylua = {
+          prepend_args = { "--quote-style", "AutoPreferDouble" },
+        },
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
