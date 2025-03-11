@@ -42,10 +42,10 @@ return {
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        javascript = { "eslint_d", "prettierd", stop_after_first = true },
-        typescript = { "eslint_d", "prettierd", stop_after_first = true },
-        typescriptreact = { "eslint_d", "prettierd", stop_after_first = true },
-        javascriptreact = { "eslint_d", "prettierd", stop_after_first = true },
+        javascript = { "eslint", "prettierd", stop_after_first = true },
+        typescript = { "eslint", "prettierd", stop_after_first = true },
+        typescriptreact = { "eslint", "prettierd", stop_after_first = true },
+        javascriptreact = { "eslint", "prettierd", stop_after_first = true },
       },
     },
   },
