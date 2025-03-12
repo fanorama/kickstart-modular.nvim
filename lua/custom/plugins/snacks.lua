@@ -32,6 +32,10 @@ return {
           { section = "startup" },
         },
       },
+      explorer = {
+        enabled = true,
+        replace_netrw = true,
+      },
     },
   },
 }
