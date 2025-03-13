@@ -47,7 +47,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.keymap.set("n", "\\", ":lua Snacks.explorer()<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>tt", ":TodoTelescope<CR>", { desc = "Search Todos with Telescope" })
-vim.keymap.set("n", "<leader>tl", ":TodoLocList<CR>", { desc = "Location list all todos" })
-vim.keymap.set("n", "<leader>tq", ":TodoQuickFix<CR>", { desc = "Quickfix all todos" })
+vim.keymap.set("n", "<leader>ot", ":TodoTelescope<CR>", { desc = "Search Todos with Telescope" })
+vim.keymap.set("n", "<leader>ol", ":TodoLocList<CR>", { desc = "Location list all todos" })
+vim.keymap.set("n", "<leader>oq", ":TodoQuickFix<CR>", { desc = "Quickfix all todos" })
 -- vim: ts=2 sts=2 sw=2 et
