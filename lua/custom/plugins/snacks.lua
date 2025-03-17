@@ -83,6 +83,8 @@ return {
       { "<c-_>",      function() Snacks.terminal() end, desc = "which_key_ignore" },
       { "<leader>wz",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
       { "<leader>wZ",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
+      { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
+      { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
       -- stylua: ignore end
     },
   },

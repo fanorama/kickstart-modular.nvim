@@ -23,11 +23,15 @@ vim.schedule(function()
   vim.opt.clipboard = "unnamedplus"
 end)
 
+local opt = vim.opt
+
+opt.termguicolors = true -- True color support
 -- Enable break indent
 vim.opt.breakindent = true
 
 -- Save undo history
 vim.opt.undofile = true
+vim.opt.undolevels = 10000
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
@@ -37,7 +41,7 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = "yes"
 
 -- Decrease update time
-vim.opt.updatetime = 250
+vim.opt.updatetime = 200
 
 -- Decrease mapped sequence wait time
 vim.opt.timeoutlen = 300
@@ -50,7 +54,7 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "▸ ", trail = "·", extends = "❯", precedes = "❮", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -64,5 +68,12 @@ vim.opt.scrolloff = 10
 -- Disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- Mini sessions
+vim.g.minisessions_disable = true
+
+-- winbar nvim navic
+vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+
 
 -- vim: ts=2 sts=2 sw=2 et

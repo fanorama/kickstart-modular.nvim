@@ -63,12 +63,14 @@ return {
 
       -- Document existing key chains
       spec = {
+        { "<leader>a", group = "AI" },
         { "<leader>c", group = "Code", mode = { "n", "x" } },
         { "<leader>d", group = "Document" },
         { "<leader>f", group = "Find" },
         { "<leader>g", group = "Git" },
         { "<leader>L", group = "LSP" },
         { "<leader>s", group = "Search" },
+        { "<leader>q", group = "Session" },
         { "<leader>w", group = "Workspace" },
         { "<leader>o", group = "Todo" },
         { "<leader>t", group = "Trouble" },
