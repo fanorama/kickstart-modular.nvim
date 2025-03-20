@@ -35,6 +35,9 @@ return {
         stylua = {
           prepend_args = { "--quote-style", "AutoPreferDouble" },
         },
+        djlint = {
+          prepend_args = { "--profile", "django" },
+        },
       },
       formatters_by_ft = {
         lua = { "stylua" },

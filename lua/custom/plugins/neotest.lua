@@ -1,5 +1,6 @@
 return {
   "nvim-neotest/neotest",
+  event = "VeryLazy",
   dependencies = {
     "nvim-neotest/nvim-nio",
     "nvim-lua/plenary.nvim",
@@ -8,6 +9,7 @@ return {
     -- list of neotest adapters
     "nvim-neotest/neotest-jest",
   },
+  keys = {},
   config = function()
     ---@diagnostic disable-next-line: missing-fields
     require("neotest").setup {

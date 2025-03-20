@@ -1,4 +1,21 @@
 return {
+  {
+    "zbirenbaum/copilot.lua",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup {
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      }
+    end,
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    event = "InsertEnter",
+    config = function()
+      require("copilot_cmp").setup()
+    end,
+  },
   { -- Autocompletion
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
@@ -42,6 +59,14 @@ return {
       local luasnip = require "luasnip"
       luasnip.config.setup {}
 
+      local has_words_before = function()
+        if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
+          return false
+        end
+        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+        return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match "^%s*$" == nil
+      end
+
       cmp.setup {
         snippet = {
           expand = function(args)
@@ -55,6 +80,13 @@ return {
         --
         -- No, but seriously. Please read `:help ins-completion`, it is really good!
         mapping = cmp.mapping.preset.insert {
+          ["<Tab>"] = vim.schedule_wrap(function(fallback)
+            if cmp.visible() and has_words_before() then
+              cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
+            else
+              fallback()
+            end
+          end),
           -- Select the [n]ext item
           ["<C-n>"] = cmp.mapping.select_next_item(),
           -- Select the [p]revious item
@@ -103,15 +135,17 @@ return {
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },
         sources = {
+          -- Copilot Source
+          { name = "copilot", group_index = 2 },
           {
             name = "lazydev",
             -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
-            group_index = 0,
+            group_index = 2,
           },
-          { name = "nvim_lsp" },
-          { name = "luasnip" },
-          { name = "path" },
-          { name = "nvim_lsp_signature_help" },
+          { name = "nvim_lsp", group_index = 2 },
+          { name = "luasnip", group_index = 2 },
+          { name = "path", group_index = 2 },
+          { name = "nvim_lsp_signature_help", group_index = 2 },
         },
       }
     end,

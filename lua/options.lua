@@ -75,5 +75,8 @@ vim.g.minisessions_disable = true
 -- winbar nvim navic
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
+-- Example config in lua
+vim.g.minimal_italic_functions = true
+vim.g.minimal_italic_comments = false
 
 -- vim: ts=2 sts=2 sw=2 et

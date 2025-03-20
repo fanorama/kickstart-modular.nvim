@@ -21,10 +21,10 @@ return {
       -- this setting is independent of vim.opt.timeoutlen
       delay = 0,
       preset = "helix",
-      triggers = {
-        { "<leader>", mode = { "n", "v" } },
-      },
+      --triggers = {},
       icons = {
+        separator = "│",
+        group = " ",
         -- set icon mappings to true if you have a Nerd Font
         mappings = vim.g.have_nerd_font,
         -- If you are using a Nerd Font: set icons.keys to an empty table which will use the
@@ -63,19 +63,19 @@ return {
 
       -- Document existing key chains
       spec = {
-        { "<leader>a", group = "AI" },
+        { "<leader>a", group = "AI", icon = { icon = "󱚞 ", color = "yellow" } },
         { "<leader>c", group = "Code", mode = { "n", "x" } },
-        { "<leader>d", group = "Document" },
-        { "<leader>f", group = "Find" },
-        { "<leader>g", group = "Git" },
-        { "<leader>L", group = "LSP" },
-        { "<leader>s", group = "Search" },
-        { "<leader>q", group = "Session" },
-        { "<leader>w", group = "Workspace" },
-        { "<leader>o", group = "Todo" },
-        { "<leader>t", group = "Trouble" },
-        { "<leader>u", group = "UI" },
-        { "<leader>h", group = "Git Hunk", mode = { "n", "v" } },
+        { "<leader>d", group = "Debug", icon = { icon = " ", color = "yellow" } },
+        { "<leader>f", group = "Find", icon = { icon = " ", color = "yellow" } },
+        { "<leader>g", group = "Git", icon = { icon = " ", color = "yellow" } },
+        { "<leader>L", group = "LSP", icon = { icon = " ", color = "yellow" } },
+        { "<leader>s", group = "Search", icon = { icon = "󰍉 ", color = "yellow" } },
+        { "<leader>q", group = "Session", icon = { icon = " ", color = "yellow" } },
+        { "<leader>w", group = "Workspace", icon = { icon = " ", color = "yellow" } },
+        { "<leader>o", group = "Todo", icon = { icon = " ", color = "yellow" } },
+        { "<leader>t", group = "Trouble", icon = { icon = " ", color = "yellow" } },
+        { "<leader>u", group = "UI", icon = { icon = " ", color = "yellow" } },
+        { "<leader>h", group = "Git Hunk", icon = { icon = " ", color = "yellow" }, mode = { "n", "v" } },
       },
     },
   },

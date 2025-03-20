@@ -207,7 +207,9 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        pyright = {},
+        -- pyright = {},
+        ["django-template-lsp"] = {},
+        emmet_ls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -222,10 +224,28 @@ return {
             end
           end,
         },
-        -- eslint = {},
         html = {},
-        emmet_language_server = {},
-
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                pyflakes = { enabled = false },
+                pycodestyle = { enabled = false },
+                autopep8 = { enabled = false },
+                yapf = { enabled = false },
+                mccabe = { enabled = false },
+                pylsp_mypy = { enabled = false },
+                pylsp_black = { enabled = false },
+                pylsp_isort = { enabled = false },
+              },
+            },
+          },
+          on_attach = function(client, bufnr)
+            if client.server_capabilities.documentSymbolProvider then
+              navic.attach(client, bufnr)
+            end
+          end,
+        },
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -264,7 +284,9 @@ return {
       require("mason-tool-installer").setup { ensure_installed = ensure_installed }
 
       require("mason-lspconfig").setup {
-        ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
+        ensure_installed = {
+          "ts_ls",
+        }, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
         automatic_installation = false,
         handlers = {
           function(server_name)
