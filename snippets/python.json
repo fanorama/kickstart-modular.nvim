@@ -1,0 +1,18 @@
+{
+    "Function Post (Django) + fptr": {
+        "body": [
+            "# Create your views here.",
+            "@login_required",
+            "@transaction.atomic",
+            "@csrf_exempt",
+            "def ${1:fname}(request):",
+            "    if request.method == \"POST\":",
+            "        if not request.user.has_perm(\"${2:permission}\"):",
+            "            return HttpResponse(\"Forbidden\", status=403)"
+        ],
+        "prefix": [
+            "Function Post (Django)",
+            "fptr"
+        ]
+    }
+}

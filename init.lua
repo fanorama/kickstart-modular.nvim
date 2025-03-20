@@ -109,7 +109,7 @@ require "lazy-bootstrap"
 require "lazy-plugins"
 
 vim.g.material_style = "deep ocean"
-vim.cmd "colorscheme night-owl"
+vim.cmd "colorscheme material"
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

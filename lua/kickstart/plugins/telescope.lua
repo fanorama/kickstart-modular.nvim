@@ -27,7 +27,7 @@ return {
       },
       { "nvim-telescope/telescope-ui-select.nvim" },
       { "nvim-telescope/telescope-media-files.nvim" },
-
+      { "benfowler/telescope-luasnip.nvim" },
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
     },
@@ -77,6 +77,7 @@ return {
             -- find command (defaults to `fd`)
             find_cmd = "rg",
           },
+          luasnip = {},
         },
       }
 
@@ -84,6 +85,7 @@ return {
       pcall(require("telescope").load_extension, "fzf")
       pcall(require("telescope").load_extension, "ui-select")
       pcall(require("telescope").load_extension, "media_files")
+      pcall(require("telescope").load_extension, "luasnip")
 
       -- See `:help telescope.builtin`
       local builtin = require "telescope.builtin"

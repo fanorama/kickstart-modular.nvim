@@ -15,4 +15,38 @@ return {
       vim.notify = notify
     end,
   },
+  -- Snipe
+  {
+    "leath-dub/snipe.nvim",
+    keys = {
+      {
+        "<Tab>",
+        function()
+          require("snipe").open_buffer_menu()
+        end,
+        desc = "Open Snipe buffer menu",
+        mode = { "n" },
+      },
+    },
+    opts = {
+      ui = {
+        position = "center",
+      },
+      hints = {
+        dictionary = "12345asdfgh",
+      },
+      navigate = {
+        cancel_snipe = "<Tab>",
+      },
+    },
+  },
+  -- lazydocker
+  {
+    "crnvl96/lazydocker.nvim",
+    event = "VeryLazy",
+    opts = {}, -- automatically calls `require("lazydocker").setup()`
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+  },
 }

@@ -25,22 +25,9 @@ return {
       return " " .. table.concat(c, "|")
     end
 
-    local custom_catppuccin = require "lualine.themes.catppuccin"
-
-    -- Custom colours
-    custom_catppuccin.normal.b.fg = "#cad3f5"
-    custom_catppuccin.insert.b.fg = "#cad3f5"
-    custom_catppuccin.visual.b.fg = "#cad3f5"
-    custom_catppuccin.replace.b.fg = "#cad3f5"
-    custom_catppuccin.command.b.fg = "#cad3f5"
-    custom_catppuccin.inactive.b.fg = "#cad3f5"
-
-    custom_catppuccin.normal.c.fg = "#6e738d"
-    custom_catppuccin.normal.c.bg = "#1e2030"
-
     require("lualine").setup {
       options = {
-        theme = custom_catppuccin,
+        theme = "material",
         component_separators = "",
         section_separators = { left = "", right = "" },
         disabled_filetypes = { "alpha", "Outline" },
@@ -51,12 +38,7 @@ return {
           { "mode", separator = { left = " ", right = "" }, icon = "" },
         },
         lualine_b = {
-          {
-            "filetype",
-            icon_only = true,
-            padding = { left = 1, right = 0 },
-          },
-          "filename",
+          "buffers",
         },
         lualine_c = {
           {

@@ -24,4 +24,14 @@ return {
     { "=p", "<Plug>(YankyPutAfterFilter)", desc = "YankyPutAfterFilter", mode = { "n" } },
     { "=P", "<Plug>(YankyPutBeforeFilter)", desc = "YankyPutBeforeFilter", mode = { "n" } },
   },
+  {
+    "smjonas/inc-rename.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("inc_rename").setup {}
+    end,
+    keys = {
+      { "<leader>cr", ":IncRename ", desc = "Rename Multiple", mode = { "n", "v" } },
+    },
+  },
 }
