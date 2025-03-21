@@ -73,6 +73,7 @@ return {
         { "<leader>q", group = "Session", icon = { icon = " ", color = "yellow" } },
         { "<leader>w", group = "Workspace", icon = { icon = " ", color = "yellow" } },
         { "<leader>o", group = "Todo", icon = { icon = " ", color = "yellow" } },
+        { "<leader>r", group = "Replace", icon = { icon = " ", color = "yellow" } },
         { "<leader>t", group = "Trouble", icon = { icon = " ", color = "yellow" } },
         { "<leader>u", group = "UI", icon = { icon = " ", color = "yellow" } },
         { "<leader>h", group = "Git Hunk", icon = { icon = " ", color = "yellow" }, mode = { "n", "v" } },
