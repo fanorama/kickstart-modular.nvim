@@ -41,6 +41,11 @@ return {
         enabled = false,
       },
       quickfile = { enabled = false },
+      animate = {
+        duration = 20, -- ms per step
+        easing = "linear",
+        fps = 60, -- frames per second. Global setting for all animations
+      },
     },
     keys = {
       -- stylua: ignore start
