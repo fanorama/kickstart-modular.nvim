@@ -17,7 +17,8 @@
           "javascriptreact",
           "htmldjango",
           "astro",
-          "blade"
+          "blade",
+          "htmldjango"
         ],
         "path": "./html.json"
       },
